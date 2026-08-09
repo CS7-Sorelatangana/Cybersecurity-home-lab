@@ -23,3 +23,4 @@ A Personal cybersecurity home lab built with VMware, Ubuntu and Kali Linux
 5. Final documentation
 
 ## 🚧 Status
+Project in progress.
