@@ -1,0 +1,33 @@
+# 🔐 VMware CyberLab — Ubuntu & Kali
+
+## 🎯 Objectif
+
+Mise en place d'un laboratoire de cybersécurité virtualisé avec VMware Workstation, composé de deux machines virtuelles :
+
+- 🐧 Ubuntu — machine cible
+- 🐉 Kali Linux — machine de test
+
+L'objectif est de construire progressivement un environnement isolé pour pratiquer les bases de la cybersécurité, du réseau et de l'analyse.
+
+## 🌐 Architecture réseau
+
+Deux réseaux virtuels sont utilisés :
+
+- **VMnet8 — NAT** : accès à Internet
+- **VMnet1 — Host-only** : communication privée entre les machines virtuelles
+
+### Adresses IP du Lab
+
+| Machine | Interface | Réseau | Adresse IP |
+|---|---|---|---|
+| Ubuntu | ens33 | NAT | 192.168.43.131 |
+| Ubuntu | ens37 | VMnet1 | 192.168.221.128 |
+| Kali | eth0 | NAT | 192.168.43.132 |
+| Kali | eth1 | VMnet1 | 192.168.221.129 |
+
+## ✅ Premier test
+
+La communication entre Kali et Ubuntu sur le réseau privé a été vérifiée avec :
+
+```bash
+ping -c 4 192.168.221.128
