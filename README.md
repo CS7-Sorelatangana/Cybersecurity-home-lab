@@ -24,3 +24,25 @@ A Personal cybersecurity home lab built with VMware, Ubuntu and Kali Linux
 
 ## 🚧 Status
 Project in progress.
+## 🖥️ Virtual Machines
+
+### Ubuntu
+
+- VMware Workstation
+- Network Adapter 1: NAT
+- Network Adapter 2: VMnet1
+- Private IP: `192.168.221.128/24`
+
+### Kali Linux
+
+- VMware Workstation
+- Network Adapter 1: NAT
+- Network Adapter 2: VMnet1
+- Private IP: `192.168.221.129/24`
+
+## 🔗 Connectivity Test
+
+From Kali Linux:
+
+```bash
+ping -c 4 192.168.221.128 RESULT: 4 packets transmitted, 4 received, 0% packet loss 
