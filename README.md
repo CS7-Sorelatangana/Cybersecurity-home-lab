@@ -73,3 +73,6 @@ Un nouveau scan depuis Kali a permis de détecter le service :
 Une détection de version a ensuite été réalisée :
 `nmap -sV -p 22 192.168.221.128`
 
+### 📸 Résultat du scan
+
+![Détection du service SSH](screenshots/nmap-ssh-detection.png)
