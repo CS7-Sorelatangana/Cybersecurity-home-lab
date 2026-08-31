@@ -44,31 +44,32 @@ Project in progress.
 
 From Kali Linux:
 
-```bash
-ping -c 4 192.168.221.128 RESULT: 4 packets transmitted, 4 received, 0% packet loss
+`bash`
+`ping -c 4 192.168.221.128 RESULT: 4 packets transmitted, 4 received, 0% packet loss`
 
 ## 🔎 Reconnaissance réseau avec Nmap
 
 Depuis Kali Linux, un premier scan de la machine Ubuntu a été réalisé :
 
-```bash
-nmap 192.168.221.128
+`bash`
+`nmap 192.168.221.128`
 
 Résultat initial :
 
-* Hôte actif
-* 1000 ports TCP courants fermés
+ Hôte actif
+ 1000 ports TCP courants fermés
 
 Un serveur SSH a ensuite été installé sur Ubuntu : 
-sudo apt install openssh-server
+`sudo apt install openssh-server`
 
 Le service SSH a été vérifié avec : 
-sudo systemctl status ssh 
+`sudo systemctl status ssh` 
 
 État : active (running)
 
 Un nouveau scan depuis Kali a permis de détecter le service : 
-22/tcp  open  ssh
+`22/tcp  open  ssh`
 
 Une détection de version a ensuite été réalisée :
-nmap -sV -p 22 192.168.221.128
+`nmap -sV -p 22 192.168.221.128`
+
