@@ -75,4 +75,4 @@ Une détection de version a ensuite été réalisée :
 
 ### 📸 Résultat du scan
 
-![Détection du service SSH](screenshots/nmap-ssh-detection.png)
+![Détection du service SSH](screenshots/nmap-ssh-detection.PNG)
