@@ -98,3 +98,35 @@ correctement sur Ubuntu 20.04.6 LTS.
 - Scans Nmap plus poussés (`-A`, `--script vuln`)
 - Test de brute-force contrôlé (Hydra/Medusa)
 - Mise en place de Fail2ban
+
+## 🔒 Durcissement du service SSH
+
+Après l'installation et l'authentification réussie, plusieurs réglages par défaut
+ont été identifiés comme des risques inutiles dans `/etc/ssh/sshd_config` :
+
+- `PermitRootLogin` non restreint
+- Aucune limite sur les tentatives d'authentification
+- `X11Forwarding` activé sans usage réel
+- Aucune restriction sur les comptes autorisés à se connecter
+
+### Modifications appliquées
+PermitRootLogin no
+MaxAuthTries 3
+X11Forwarding no
+AllowUsers soso4
+
+
+![Configuration SSH durcie](screenshots/ssh-hardening-config.PNG)
+
+### Vérification
+
+Après redémarrage du service (`sudo systemctl restart ssh`) :
+- ✅ La connexion avec le compte `soso4` fonctionne toujours normalement
+- ✅ Une tentative de connexion avec le compte `root` est refusée
+
+![Tentative de connexion root refusée](screenshots/ssh-root-denied.PNG)
+
+## 🚧 Prochaines étapes
+
+- Test de brute-force contrôlé (Hydra/Medusa) pour valider l'efficacité du durcissement
+- Mise en place de Fail2ban pour un blocage automatique
