@@ -76,3 +76,25 @@ Une détection de version a ensuite été réalisée :
 ### 📸 Résultat du scan
 
 ![Détection du service SSH](screenshots/nmap-ssh-detection.PNG)
+
+## ✅ Authentification SSH réussie
+
+Après avoir corrigé l'erreur initiale (tentative de connexion avec l'utilisateur `kali`
+au lieu du compte distant), la connexion SSH a été établie avec succès vers le compte
+Ubuntu `soso4` :
+
+```bash
+ssh -v soso4@192.168.221.128
+```
+
+Résultat : la clé d'hôte a été apprise (`known_hosts`), et la session s'est ouverte
+correctement sur Ubuntu 20.04.6 LTS.
+
+![Authentification SSH réussie](screenshots/ssh-auth-success.PNG)
+
+## 🚧 Prochaines étapes
+
+- Durcissement du service SSH (désactivation login root, auth par clé)
+- Scans Nmap plus poussés (`-A`, `--script vuln`)
+- Test de brute-force contrôlé (Hydra/Medusa)
+- Mise en place de Fail2ban
